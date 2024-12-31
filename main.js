@@ -10,3 +10,17 @@ app.get('/', (req,res) => {
 app.listen(PORT, () => {
     console.log(`listening on port at http://localhost:${PORT}`)
 });
+
+// CRUD operations
+
+// R - for reading movies
+app.get('/movies', () => {});
+
+// C - for creating movies
+app.post('/movies', () => {});
+
+// U - for updating movies
+app.put('/movies/:id', () => {});
+
+//D - for deleting movies
+app.delete('/movies/:id', () => {});
