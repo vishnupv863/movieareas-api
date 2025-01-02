@@ -1,10 +1,11 @@
 export const movieIndex = (req,res) => {
-    res.send('List of movies')
+    res.send('movies lists')
 }
 
-export const movieCreater = (req,res) => {
-    res.send('Create list of movies')
-}
+export const movieCreater = (req, res) => {
+    console.log('Request Body:', req.body);  // Log the body to verify it's coming through
+    res.json(req.body);                       // Send back the received body
+};
 
 export const movieUpdator = (req,res) => {
     res.send('Update list of movies')

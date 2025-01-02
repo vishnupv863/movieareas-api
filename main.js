@@ -1,17 +1,17 @@
 import express from 'express';
-import MoviesRoutes from './routes/movies.routes.js'
-import connectDB from './lib/db.js' 
+import MoviesRoutes from './routes/movies.routes.js';
+import connectDB from './lib/db.js';
 
 const app = express();
-const PORT = 3000;
-
-// Connect mongodb server
 connectDB();
 
+// Middleware to parse JSON
+app.use(express.json());
 
-app.listen(PORT, () => {
-    console.log(`listening on port at http://localhost:${PORT}`)
-});
-
-// CRUD operations
+// Use routes
 app.use('/movies', MoviesRoutes);
+
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
+});
